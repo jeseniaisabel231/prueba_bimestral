@@ -35,84 +35,109 @@ import { CommonModule } from '@angular/common'; // Para usar *ngIf
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Calcular Raíces</ion-title>
+        <ion-title>Calculo de Raíces</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
-      <form (ngSubmit)="calcularRaices()" class="flex flex-col">
-        <div>
+      <div class="h-full w-full flex justify-center items-start ">
+        <div class="grid place-content-center mt-5">
+          <div class="flex flex-col items-center mb-4">
+            <strong class="text-lg mb-3"> Formula General</strong>
+            <img
+              src="../../assets/img/formula-general.jpg"
+              class="w-72  rounded-lg"
+              alt=""
+            />
+          </div>
 
-          <ion-item>
-            <ion-label position="floating">Ingresa el coeficiente a</ion-label>
-            <ion-input
+          <div class="grid gap-4">
+
+            <label class="text-start font-bold"> Ingresa el valor de a: </label>
+            <input
+              class="bg-slate-800 rounded-md text-white pl-3 h-10"
               type="number"
-              [(ngModel)]="a"
-              name="a"
-              required
-            ></ion-input>
-          </ion-item>
-        </div>
-        <ion-item>
-          <ion-label position="floating">Ingresa el coeficiente b</ion-label>
-          <ion-input
-            type="number"
-            [(ngModel)]="b"
-            name="b"
-            required
-          ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Ingresa el coeficiente c</ion-label>
-          <ion-input
-            type="number"
-            [(ngModel)]="c"
-            name="c"
-            required
-          ></ion-input>
-        </ion-item>
+              placeholder="0"
+              [(ngModel)]="num1"
+            />
+  
+            <label class="text-star font-bold"> Ingresa el valor de b: </label>
+            <input
+              class="bg-slate-800 rounded-md text-white pl-3 h-10"
+              type="number"
+              placeholder="0"
+              [(ngModel)]="num2"
+            />
+  
+            <label class="text-star font-bold"> Ingresa el valor de c: </label>
+            <input
+              class="bg-slate-800 rounded-md text-white pl-3 h-10"
+              type="number"
+              placeholder="0"
+              [(ngModel)]="num3"
+            />
+          </div>
 
-        <div class="flex justify-center items-center mt-7">
-          <ion-button expand="full" type="submit">Resultado</ion-button>
-        </div>
-      </form>
+          <br />
+          <button class="bg-[#4d8dff] h-10 w-36 ml-16 rounded-lg" (click)="calcular()">
+            Calcular
+          </button>
+          <div class="flex  w-full">
+            <div class="mr-16">
 
-      <strong>Resultado:</strong>
-      <div *ngIf="raices" class="flex  w-32 items-center justify-center">
-        <p *ngIf="raices.length === 2">
-          x1: {{ raices[0] }}<br />x2: {{ raices[1] }}
-        </p>
-        <p *ngIf="raices.length === 1">x: {{ raices[0] }}</p>
-        <p *ngIf="raices.length === 0">No hay raíces reales.</p>
+              <h2 class="text-star pt-5 ">Respuesta x1</h2>
+              <input
+                class="text-center  border-solid border-2 bg-black h-10 w-28 rounded-md placeholder-slate-500"
+                type="text"
+                placeholder="x1"
+                [(ngModel)]="x1"
+                readonly
+              />
+            </div>
+            <div>
+
+              <h2 class="text-star pt-5">Respuesta x2</h2>
+              <input
+                class="text-center  border-solid border-2  bg-black h-10 w-28 rounded-md placeholder-slate-500"
+                type="text"
+                placeholder="x2"
+                [(ngModel)]="x2"
+                readonly
+              />
+            </div>
+
+          </div>
+        </div>
       </div>
     </ion-content>
   `,
 })
 export class Tab3Page {
-  a: number;
-  b: number;
-  c: number;
-  raices: number[];
+  constructor() {}
 
-  constructor() {
-    this.a = 0;
-    this.b = 0;
-    this.c = 0;
-    this.raices = [];
-  }
+  num1: number | null = null;
+  num2: number | null = null;
+  num3: number | null = null;
+  x1: number | string = '';
+  x2: number | string = '';
 
-  calcularRaices() {
-    const discriminante = this.b ** 2 - 4 * this.a * this.c;
+  calcular() {
+    if (this.num1 === null || this.num2 === null || this.num3 === null) return;
 
+    const discriminante = this.num2 * this.num2 - 4 * this.num1 * this.num2;
     if (discriminante > 0) {
-      const x1 = (-this.b + Math.sqrt(discriminante)) / (2 * this.a);
-      const x2 = (-this.b - Math.sqrt(discriminante)) / (2 * this.a);
-      this.raices = [x1, x2];
+      this.x1 = (-this.num2 + Math.sqrt(discriminante)) / (2 * this.num1);
+      this.x2 = (-this.num2 - Math.sqrt(discriminante)) / (2 * this.num1);
     } else if (discriminante === 0) {
-      const x = -this.b / (2 * this.a);
-      this.raices = [x];
+      this.x1 = -this.num2 / (2 * this.num1);
+      this.x2 = 'Sin solución';
     } else {
-      this.raices = [];
+      this.x1 = 'Sin solución';
+      this.x2 = 'Sin solución';
     }
+    // Limpiar los campos luego de calcular
+    this.num1 = null;
+    this.num2 = null;
+    this.num3 = null;
   }
 }

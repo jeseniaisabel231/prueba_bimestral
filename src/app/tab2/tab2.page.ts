@@ -33,17 +33,23 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
     </ion-header>
 
     <ion-content>
-      <div class="flex justify-center items-center mt-11">
+      <div class="flex  justify-center mt-6">
+        <strong class="text-center text-3xl font-bold text-white shadow-lg"
+          >jeseniaisabel231</strong
+        >
+      </div>
+
+      <div class="flex justify-center items-center mt-11 mb-6">
         <img src="../assets/img/perfil-Isabel.jpg" class=" rounded-full w-56" />
       </div>
       <div class="text-center">
-        <h3 class="font-extrabold text-[#8f845c]">Repositorio de Git Hub</h3>
+        <h3 class="font-extrabold text-white">Repositorio de Git Hub</h3>
         <div class="flex justify-center pt-10 ">
           <a
             href="https://github.com/jeseniaisabel231/prueba_bimestral"
-            class="flex w-48 h-10 bg-emerald-300 text-black rounded-md pl-16 pt-2"
-          ><strong>Enlace</strong></a>
-
+            class="flex w-48 h-10 bg-[#4d8dff] text-black rounded-md pl-16 pt-2"
+            ><strong>Enlace</strong></a
+          >
         </div>
       </div>
     </ion-content>
