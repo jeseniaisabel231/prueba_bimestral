@@ -1,4 +1,5 @@
 import { IonicModule } from '@ionic/angular';
+
 import { Component } from '@angular/core';
 import {
   IonHeader,
@@ -21,7 +22,6 @@ import {
   IonInput,
   IonList,
 } from '@ionic/angular/standalone';
-
 
 @Component({
   imports: [
@@ -52,41 +52,54 @@ import {
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title> Biografía de Isabel Pazto </ion-title>
+        <ion-title> Biografía</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
-      <main class="flex sm:flex-row flex-col ">
-        <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
-        <section class="w-full  text-black  py-14 bg-gradient-to-b from-[#e1d2ab] via-[#ffffff] to-[#cccccc]">
-          <div class="mt-12 px-14 text-center">
-            <h1 class="font-bold text-4xl text-[#736b4d]">ISABEL PAZTO</h1>
+      <main class="flex flex-col justify-center items-center h-screen">
+        <section
+          class=" text-black   bg-gradient-to-r from-gray-500 via-blue-700 to-purple-900 h-screen"
+        >
+          <div class="flex  justify-center">
+            <strong class="text-center text-3xl font-bold text-white shadow-lg"
+              >ISABEL PAZTO</strong
+            >
           </div>
 
-          <div class="flex flex-col p-6 items-center">
-            <img
-              src="../assets/img/perfil-Isabel.jpg"
-              class=" rounded-full w-52 mb-10"
-            />
+          <div class="flex-col">
+            <div class="flex flex-col p-6 items-center">
+              <img
+                src="../assets/img/perfil-Isabel.jpg"
+                class=" rounded-full w-44 "
+              />
+            </div>
+
+            <div class="flex px-6 bg-[#1f1f1f] w-96 rounded-md ml-14 py-6 ">
+              <p class="text-white">
+                <strong>Isabel Pazto</strong>, estudiante de la Escuela
+                Politécnica Nacional y actualmente estoy cursando Tecnología
+                Superior en Desarrollo de Software. Me apasiona el desarrollo
+                frontend, ya que se complementa con el diseño web. Disfruto
+                diseñar y crear cosas nuevas.
+              </p>
+            </div>
+
+            <div
+              class="flex bg-[#1f1f1f] w-96 ml-14 rounded-md my-4 h-10 items-center pl-4"
+            >
+              <p class="text-white">
+                Aqui, dejo una lista con mis pasatiempos favoritos
+              </p>
+            </div>
           </div>
 
-          <div class="flex px-6">
-            <p>
-              <strong>Jesenia Isabel Pazto</strong> Estudiante de la ESCUELA
-              POLITECNICA NACIONAL, en la actualidad estoy cursando la carrera
-              de Tecnologia Superior en Desarrollo de Software, lo que ma me
-              apasiona de la carrera es el frontend y mas por que se complementa
-              con el diseño web, me encanta diseñar crear cosas nuevas.
-            </p>
-          </div>
-
-          <div class="flex px-6">
+          <div class="flex px-14">
             <ion-accordion-group>
               <ion-accordion>
                 <ion-item color="#736b4d" slot="header">
-                  <h3 class="font-extrabold uppercase tracking-widest">
-                    Idiomas
+                  <h3 class="font-bold uppercase tracking-widest">
+                    Pasatiempos
                   </h3>
                 </ion-item>
                 <div class="ion-padding" slot="content">
@@ -108,27 +121,19 @@ import {
                     label="Deja tu comentario"
                     placeholder="Escribir texto"
                   ></ion-input>
-                  <ion-button>Enviar</ion-button>
+                  <div class="flex ml-6 mt-6 justify-center">
+                    <ion-button id="present-alert">Contactar</ion-button>
+                    <ion-alert
+                      trigger="present-alert"
+                      subHeader="Confirmar"
+                      message="Segur@ deseas contactarte con esta persona?."
+                      [buttons]="alertButtons"
+                    ></ion-alert>
+                  </div>
                 </ion-item>
               </ion-list>
             </ion-list>
-
           </div>
-
-          <div class="flex ml-6 mt-6 justify-center">
-            <ion-button id="present-alert">Contactar</ion-button>
-            <ion-alert
-              trigger="present-alert"
-              subHeader="Confirmar"
-              message="Segur@ deseas contactarte con esta persona?."
-              [buttons]="alertButtons"
-            ></ion-alert>
-          </div>
-          
-
-          
-
-
         </section>
       </main>
     </ion-content>
