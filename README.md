@@ -5,7 +5,7 @@
 > [!IMPORTANT]
 > **Planteamiento del problema**
 >
-> En la actualidad Ecuador enfrenta serios desafíos en la gestión de residuos y la contaminación ambiental, muchas de las ciudades tienen sistemas ineficientes para la recolección de basura, lo que resulta en una acumulación de desechos que contaminan el suelo, agua y aire, ya que sin sistemas de recolección eficaces y accesibles, los residuos no se manejan correctamente, lo que lleva a la proliferación de basureros ilegales y la quema de desechos, por lo que es esencial la implementación de soluciones innovadoras.
+> El programa cuenta con cinco pestañas. En la primera, se muestra una biografía personal; en la segunda, se encuentra un enlace a GitHub que dirige al repositorio de este programa; en la tercera, hay una calculadora para resolver funciones cuadráticas usando la fórmula general; en la cuarta, se puede ingresar un texto que es posible guardar localmente
 
 
 <details>
