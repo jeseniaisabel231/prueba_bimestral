@@ -1,5 +1,5 @@
 <h1 align='center'> 
- Sistema de gestión de residuos 
+ PRUEBA BIMESTRAL 
 </h1>
 
 > [!IMPORTANT]
