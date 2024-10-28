@@ -97,7 +97,7 @@ export class Tab5Page {
       const fechaSalida = new Date(this.fecha2);
       const diferencia = fechaSalida.getTime() - fechaEntrada.getTime();
       const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-      
+
       this.diferenciaFechas = Math.abs(dias);
     }
   }

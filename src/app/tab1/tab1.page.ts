@@ -3,47 +3,51 @@ import { IonicModule } from '@ionic/angular';
 import { Component } from '@angular/core';
 import {
   IonHeader,
-  IonIcon,
-  IonTitle,
   IonToolbar,
+  IonButtons,
+  IonMenuButton,
+  IonTitle,
   IonContent,
-  IonAccordion,
-  IonAccordionGroup,
-  IonItem,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonAvatar,
+  IonImg,
   IonCard,
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
-  IonMenu,
-  IonButtons,
-  IonMenuButton,
-  IonAlert,
-  IonButton,
-  IonInput,
   IonList,
+  IonItem,
+  IonLabel,
+  IonChip,
+  IonButton,
+  IonAlert,
 } from '@ionic/angular/standalone';
 
 @Component({
   imports: [
-    IonContent,
-    IonIcon,
     IonHeader,
     IonToolbar,
+    IonButtons,
+    IonMenuButton,
     IonTitle,
-    IonAccordion,
-    IonAccordionGroup,
-    IonItem,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonAvatar,
+    IonImg,
     IonCard,
     IonCardHeader,
     IonCardTitle,
     IonCardContent,
-    IonMenu,
-    IonButtons,
-    IonMenuButton,
-    IonAlert,
-    IonButton,
-    IonInput,
     IonList,
+    IonItem,
+    IonLabel,
+    IonChip,
+    IonButton,
+    IonAlert,
   ],
   standalone: true,
   template: `
@@ -57,90 +61,114 @@ import {
     </ion-header>
 
     <ion-content>
-      <main class="flex flex-col justify-center items-center h-screen">
-        <section
-          class="text-black   bg-gradient-to-r from-gray-500 via-blue-700 to-purple-900 h-screen justify-center items-center"
-        >
-          <div class="flex  justify-center">
-            <strong class="text-center text-3xl font-bold text-white shadow-lg"
-              >ISABEL PAZTO</strong
-            >
-          </div>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Isabel Pazto</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
-          <div class="flex-col mr-20">
-            <div class="flex flex-col p-6 items-center ml-20">
-              <img
-                src="../assets/img/perfil-Isabel.jpg"
-                class=" rounded-full w-44 "
-              />
+      <ion-grid>
+        <ion-row>
+          <div class="flex-col justify-center items-center w-full ">
+            <div class="flex justify-center items-center ">
+              <ion-col size="6">
+                <h2 class="font-extrabold text-lg">Isabel Pazto</h2>
+              </ion-col>
             </div>
 
-            <div class="flex px-6 bg-[#1f1f1f] w-96 rounded-md ml-20 py-6 ">
-              <p class="text-white">
-                <strong>Isabel Pazto</strong>, estudiante de la Escuela
-                Politécnica Nacional y actualmente estoy cursando Tecnología
-                Superior en Desarrollo de Software. Me apasiona el desarrollo
-                frontend, ya que se complementa con el diseño web. Disfruto
-                diseñar y crear cosas nuevas.
-              </p>
-            </div>
-
-            <div
-              class="flex bg-[#1f1f1f] w-96 ml-20 rounded-md my-4 h-10 items-center pl-4"
-            >
-              <p class="text-white">
-                Aqui, dejo una lista con mis pasatiempos favoritos
-              </p>
+            <div class="flex justify-center items-center">
+              <ion-col size="6" class="center-col">
+                <ion-avatar>
+                  <ion-img
+                    class="w-24 h-24"
+                    src="assets/img/perfil-Isabel.jpg"
+                  ></ion-img>
+                </ion-avatar>
+              </ion-col>
             </div>
           </div>
+        </ion-row>
 
-          
+        <div class="mt-12">
+          <ion-row>
+            <ion-col>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Biografía</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p>
+                    <strong>Isabel Pazto</strong>, estudiante de la Escuela
+                    Politécnica Nacional y actualmente estoy cursando Tecnología
+                    Superior en Desarrollo de Software. Me apasiona el
+                    desarrollo frontend, ya que se complementa con el diseño
+                    web. Disfruto diseñar y crear cosas nuevas.
+                  </p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </div>
 
-            <div class="flex ml-20">
-              <ion-accordion-group>
-                <ion-accordion>
-                  <ion-item color="#736b4d" slot="header">
-                    <h3 class="text-xs uppercase tracking-widest">
-                      Pasatiempos
-                    </h3>
-                  </ion-item>
-                  <div class="ion-padding" slot="content">
-                    <ul class="list-disc marker:text-[#8c8c38] text-xs ml-4">
-                      <li class="text-white">Jabones artesanales</li>
-                      <li class="text-white">Manualidades</li>
-                      <li class="text-white">Diseñar</li>
-                    </ul>
-                  </div>
-                </ion-accordion>
-              </ion-accordion-group>
-            </div>
-  
-            <div class="flex w-0 ml-20">
-              <ion-list>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Pasatiempos</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
                 <ion-list>
                   <ion-item>
-                    <ion-input
-                      label="Deja tu comentario"
-                      placeholder="Escribir texto"
-                    ></ion-input>
-                    <div class="flex ml-6 mt-6 justify-center">
-                      <div class="flex mb-3">
-
-                        <ion-button id="present-alert">Contactar</ion-button>
-                      </div>
-                      <ion-alert
-                        trigger="present-alert"
-                        subHeader="Confirmar"
-                        message="Segur@ deseas contactarte con esta persona?."
-                        [buttons]="alertButtons"
-                      ></ion-alert>
-                    </div>
+                    <ion-label>Me apasiona hacer manualidades. </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label
+                      >Disfruto de la elaboración de jabones artesanales.
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Me gusta diseñar páginas web. </ion-label>
                   </ion-item>
                 </ion-list>
-              </ion-list>
-            </div>
-        </section>
-      </main>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Habilidades Blandas</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col>
+                    <ion-chip color="danger">Responsabilidad</ion-chip>
+                    <ion-chip color="warning">Puntualidad</ion-chip>
+                  </ion-col>
+                  <ion-col>
+                    <ion-chip color="tertiary">Liderazgo</ion-chip>
+                    <ion-chip color="black">Trabajo en equipo</ion-chip>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <div class="flex ml-6 mt-6 justify-center">
+          <div class="flex mb-3">
+            <ion-button id="present-alert">Contactar</ion-button>
+          </div>
+          <ion-alert
+            trigger="present-alert"
+            subHeader="Confirmar"
+            message="Segur@ deseas contactarte con esta persona?."
+            [buttons]="alertButtons"
+          ></ion-alert>
+        </div>
+      </ion-grid>
     </ion-content>
   `,
 })
