@@ -14,8 +14,7 @@
   
 >   -  Muestra información personal detallada sobre el autor o el usuario del programa.
 
-  <img src = 'https://github.com/user-attachments/assets/633738ef-5e09-4fb1-be61-25b4b5a57313
-' width='300'>
+  <img src = 'https://github.com/user-attachments/assets/633738ef-5e09-4fb1-be61-25b4b5a57313' width='300'>
 
 </details>
 
