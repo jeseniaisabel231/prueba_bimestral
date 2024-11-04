@@ -18,7 +18,7 @@
 
   <img src = 'https://github.com/user-attachments/assets/976e8bc5-a33a-40d9-8598-f4f7582beff7' width='300'>
 
-</details
+</details>
 
 <details>
   <summary>🧩 Pestaña 1: Biografía Personal </summary>
