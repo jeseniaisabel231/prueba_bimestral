@@ -9,6 +9,18 @@
 
 
 <details>
+  <summary>🧩 Splash Screen</summary>
+  
+  
+>   -  Muestra información personal detallada sobre el autor o el usuario del programa.
+
+  <img src = 'https://github.com/user-attachments/assets/6fd175a6-c4bb-4fe2-abf8-bde6db9920db' width='300'>
+
+  <img src = 'https://github.com/user-attachments/assets/976e8bc5-a33a-40d9-8598-f4f7582beff7' width='300'>
+
+</details
+
+<details>
   <summary>🧩 Pestaña 1: Biografía Personal </summary>
   
   
